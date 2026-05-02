@@ -1,15 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, Mail, Clock, CheckCircle } from "lucide-react";
+import { InquiryForm } from "@/components/inquiries/InquiryForm";
+import { InquirySuccessState } from "@/components/inquiries/InquirySuccessState";
 
 interface InquirySectionProps {
-  onOpenInquiry: () => void;
+  onOpenInquiry?: () => void;
 }
 
 export function InquirySection({ onOpenInquiry }: InquirySectionProps) {
+  const [isSuccess, setIsSuccess] = useState(false);
+
   return (
     <section id="contact" className="py-20 md:py-28 bg-white relative overflow-hidden">
       {/* Subtle decorative border top */}
@@ -26,11 +31,21 @@ export function InquirySection({ onOpenInquiry }: InquirySectionProps) {
             centered
           />
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button size="lg" icon={ArrowRight} onClick={onOpenInquiry} className="bg-[#007EA7] hover:bg-[#006A8F]">
-              Connect
-            </Button>
-          </div>
+          {onOpenInquiry ? (
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <Button size="lg" icon={ArrowRight} onClick={onOpenInquiry} className="bg-[#007EA7] hover:bg-[#006A8F]">
+                Connect
+              </Button>
+            </div>
+          ) : (
+            <div className="max-w-xl mx-auto mb-12 text-left bg-white p-6 sm:p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100">
+              {isSuccess ? (
+                <InquirySuccessState onClose={() => setIsSuccess(false)} />
+              ) : (
+                <InquiryForm onSuccess={() => setIsSuccess(true)} />
+              )}
+            </div>
+          )}
 
           {/* Trust Points */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
