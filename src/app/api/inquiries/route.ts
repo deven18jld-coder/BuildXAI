@@ -1,41 +1,40 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { validateName, validatePhone, validateEmail, validateMessage, validateRequired } from '@/lib/utils/validation';
+import { 
+  validateName, 
+  validatePhone, 
+  validateEmail, 
+  validateMessage, 
+  validateRequired 
+} from '@/lib/utils/validation';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-// Basic in-memory rate limiting (IP -> { count, timestamp })
-const rateLimit = new Map<string, { count: number; timestamp: number }>();
-
-export async function POST(request: Request) {
+export async function POST(req: Request) {
   try {
-    const ip = request.headers.get('x-forwarded-for') || 'unknown_ip';
-    const now = Date.now();
-    const windowMs = 60 * 1000; // 1 minute
+    // Get environment variables inside the handler to prevent module-level crashes
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    // Fallback to anon key if service role key is missing
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-    const rateData = rateLimit.get(ip);
-    if (rateData && now - rateData.timestamp < windowMs) {
-      if (rateData.count >= 3) {
-        return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
-      }
-      rateData.count += 1;
-      rateLimit.set(ip, rateData);
-    } else {
-      rateLimit.set(ip, { count: 1, timestamp: now });
+    if (!supabaseUrl || !supabaseKey) {
+      console.error('Supabase configuration missing in environment variables');
+      return NextResponse.json(
+        { success: false, error: 'Database configuration missing' },
+        { status: 500 }
+      );
     }
 
-    const body = await request.json();
+    // Initialize Supabase client
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    const body = await req.json();
     const { name, phone, email, service_type, message, bot_field } = body;
 
-    // Honeypot check
+    // Honeypot check - if bot_field is filled, silently succeed without saving
     if (bot_field) {
-      // Act like it was successful to fool bots
-      return NextResponse.json({ success: true }, { status: 200 });
+      return NextResponse.json({ success: true });
     }
 
-    // Backend Validation
+    // Backend validation
     const errors: Record<string, string> = {};
 
     if (!validateRequired(name)) {
@@ -54,41 +53,42 @@ export async function POST(request: Request) {
       errors.email = "Please enter a valid email address";
     }
 
-    if (!validateRequired(service_type)) {
-      errors.service_type = "Please select a service";
-    }
-
-    if (message) {
-      if (message.trim().length > 0 && message.trim().length < 10) {
-        errors.message = "Message must be at least 10 characters";
-      } else if (!validateMessage(message)) {
-        errors.message = "Please enter a meaningful message without repeated characters";
-      }
+    if (message && !validateMessage(message)) {
+      errors.message = "Please enter a meaningful message";
     }
 
     if (Object.keys(errors).length > 0) {
-      return NextResponse.json({ error: 'Validation failed', errors }, { status: 400 });
+      return NextResponse.json({ success: false, errors }, { status: 400 });
     }
 
-    const { error: supabaseError } = await supabase
+    // Insert form data into "inquiries" table
+    const { error } = await supabase
       .from('inquiries')
-      .insert({
-        name,
-        phone,
-        email: email || null,
-        service_type,
-        message,
-      } as any);
+      .insert([
+        {
+          name,
+          phone,
+          email: email || null,
+          service_type: service_type || 'General Inquiry',
+          message: message || null,
+          created_at: new Date().toISOString(),
+        },
+      ]);
 
-    if (supabaseError) {
-      console.error('Supabase error:', supabaseError);
-      return NextResponse.json({ error: 'Failed to submit inquiry' }, { status: 500 });
+    if (error) {
+      console.error('Supabase Insertion Error:', error);
+      return NextResponse.json(
+        { success: false, error: 'Failed to save inquiry to database' },
+        { status: 500 }
+      );
     }
 
-    return NextResponse.json({ success: true }, { status: 200 });
-
-  } catch (error) {
-    console.error('API Error:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ success: true });
+  } catch (error: any) {
+    console.error('Inquiry API error:', error);
+    return NextResponse.json(
+      { success: false, error: error.message || 'Internal server error' },
+      { status: 500 }
+    );
   }
 }
