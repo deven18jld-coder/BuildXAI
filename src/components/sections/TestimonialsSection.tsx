@@ -11,8 +11,8 @@ export function TestimonialsSection() {
     <section id="testimonials" className="py-20 md:py-28 bg-[#F8F5F0]">
       <Container>
         <SectionHeading
-          title="What Our Clients Say"
-          subtitle="Real results from real businesses. See how we've helped companies transform and grow."
+          title="What Indian Businesses Say About Us"
+          subtitle="Real results from Indian businesses. See how our AI automation & website development services have helped companies across India transform and grow."
           centered
         />
 

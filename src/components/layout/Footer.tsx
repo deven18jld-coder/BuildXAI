@@ -21,8 +21,8 @@ export function Footer() {
           <div className="space-y-4">
             <Logo size="lg" />
             <p className="text-[#475569] text-sm leading-relaxed">
-              Premium web development, AI automation, and data services for
-              modern businesses.
+              AI automation, website development & n8n workflow solutions for
+              Indian businesses. Affordable small business automation across India.
             </p>
           </div>
 

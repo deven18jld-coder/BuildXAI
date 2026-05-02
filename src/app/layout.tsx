@@ -13,31 +13,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BuildXAI - Premium Web Development & AI Automation",
+  title: {
+    default: "AI Automation & Website Development Services for Indian Businesses | BuildXAI",
+    template: "%s | BuildXAI",
+  },
   description:
-    "Transform your business with BuildXAI's premium web development, AI automation, and data services. Expert solutions for modern businesses.",
+    "BuildXAI offers AI automation, website development & n8n workflow solutions for Indian businesses. Affordable small business automation, web design & data services across India.",
   keywords: [
-    "web development",
-    "AI automation",
-    "data services",
-    "n8n automation",
-    "voice agents",
-    "WhatsApp automation",
-    "Excel dashboards",
+    "AI automation India",
+    "website development India",
+    "small business automation India",
+    "n8n automation India",
+    "web design services India",
+    "AI voice agent India",
+    "WhatsApp automation India",
+    "Excel dashboard India",
+    "website redesign India",
+    "business automation India",
+    "AI automation for gyms in India",
+    "website development for local businesses in India",
+    "automation for coaching institutes in India",
+    "gym automation India",
+    "coaching institute automation India",
+    "local business website India",
+    "BuildXAI",
   ],
   authors: [{ name: "BuildXAI" }],
   openGraph: {
-    title: "BuildXAI - Premium Web Development & AI Automation",
+    title: "AI Automation & Website Development Services for Indian Businesses | BuildXAI",
     description:
-      "Transform your business with cutting-edge technology solutions.",
+      "Affordable AI automation, website development & n8n solutions for Indian businesses. Get more leads, automate workflows & scale faster.",
     type: "website",
-    locale: "en_US",
+    locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BuildXAI - Premium Web Development & AI Automation",
+    title: "AI Automation & Website Development Services for Indian Businesses | BuildXAI",
     description:
-      "Transform your business with cutting-edge technology solutions.",
+      "Affordable AI automation, website development & n8n solutions for Indian businesses. Get more leads, automate workflows & scale faster.",
   },
 };
 

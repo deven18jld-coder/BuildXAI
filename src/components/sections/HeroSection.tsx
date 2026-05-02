@@ -49,7 +49,7 @@ export function HeroSection({ onOpenInquiry }: HeroSectionProps) {
             >
               <Sparkles className="w-3.5 h-3.5 text-sky-600" />
               <span className="text-xs font-semibold text-sky-700 tracking-tight uppercase">
-                Helping Indian Businesses Grow with AI & Web Solutions
+                AI Automation & Website Development Services for Indian Businesses
               </span>
             </motion.div>
 
@@ -60,8 +60,8 @@ export function HeroSection({ onOpenInquiry }: HeroSectionProps) {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.15] mb-6 tracking-tight"
             >
-              We Build High-Converting Websites &{" "}
-              <span className="text-sky-500">AI Automations</span> for Growing Businesses
+              AI Automation &{" "}
+              <span className="text-sky-500">Website Development</span> Services for Indian Businesses
             </motion.h1>
 
             {/* Subheading */}
@@ -71,7 +71,7 @@ export function HeroSection({ onOpenInquiry }: HeroSectionProps) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-normal max-w-2xl mx-auto"
             >
-              Get more leads, automate repetitive work, and scale your business without hiring more staff.
+              Get more leads, automate repetitive work, and scale your Indian business with AI automation, custom websites & n8n workflows — without hiring more staff.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -100,9 +100,9 @@ export function HeroSection({ onOpenInquiry }: HeroSectionProps) {
             {/* Trust Indicators */}
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 mt-8 w-full">
               {[
-                { text: "Real Demo Projects Available", icon: CheckCircle2, color: "text-emerald-500", bg: "bg-emerald-50" },
+                { text: "Trusted by Indian Businesses", icon: CheckCircle2, color: "text-emerald-500", bg: "bg-emerald-50" },
                 { text: "Fast Delivery (3–7 days)", icon: Zap, color: "text-amber-500", bg: "bg-amber-50" },
-                { text: "Affordable for Businesses", icon: Wallet, color: "text-sky-500", bg: "bg-sky-50" },
+                { text: "Affordable Small Business Automation", icon: Wallet, color: "text-sky-500", bg: "bg-sky-50" },
               ].map((item, i) => (
                 <motion.div
                   key={i}

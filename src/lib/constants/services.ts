@@ -20,9 +20,9 @@ export type ServiceItem = {
 
 export const services: ServiceItem[] = [
   {
-    title: "Web Design Services",
+    title: "Web Design Services India",
     description:
-      "Custom, responsive designs that capture your brand essence and convert visitors into customers.",
+      "Custom, responsive website designs for Indian businesses that capture your brand essence and convert visitors into customers.",
     icon: Palette,
     bullets: [
       "Modern UI/UX design",
@@ -31,9 +31,9 @@ export const services: ServiceItem[] = [
     ],
   },
   {
-    title: "Dynamic Website Services",
+    title: "Website Development India",
     description:
-      "Full-stack web applications with powerful functionality and seamless user experiences.",
+      "Full-stack website development for Indian businesses with powerful functionality and seamless user experiences.",
     icon: Globe,
     bullets: [
       "React/Next.js development",
@@ -42,9 +42,9 @@ export const services: ServiceItem[] = [
     ],
   },
   {
-    title: "Website Redesign Services",
+    title: "Website Redesign Services India",
     description:
-      "Transform your existing website into a modern, high-performing digital asset.",
+      "Transform your existing website into a modern, high-performing digital asset for the Indian market.",
     icon: RefreshCw,
     bullets: [
       "Complete visual overhaul",
@@ -53,9 +53,9 @@ export const services: ServiceItem[] = [
     ],
   },
   {
-    title: "Website Maintenance Services",
+    title: "Website Maintenance India",
     description:
-      "Keep your website secure, updated, and running at peak performance.",
+      "Keep your business website secure, updated, and running at peak performance with affordable maintenance.",
     icon: Wrench,
     bullets: [
       "Regular security updates",
@@ -64,9 +64,9 @@ export const services: ServiceItem[] = [
     ],
   },
   {
-    title: "AI Voice Agent",
+    title: "AI Voice Agent India",
     description:
-      "Intelligent voice assistants that handle customer interactions naturally and efficiently.",
+      "Intelligent AI voice assistants for Indian businesses that handle customer interactions naturally and efficiently.",
     icon: Phone,
     bullets: [
       "Natural language processing",
@@ -75,9 +75,9 @@ export const services: ServiceItem[] = [
     ],
   },
   {
-    title: "AI Inbound/Outbound Call Service",
+    title: "AI Call Automation India",
     description:
-      "Automated calling solutions that scale your outreach and handle inbound requests.",
+      "Automated AI calling solutions for Indian businesses that scale your outreach and handle inbound requests.",
     icon: Headphones,
     bullets: [
       "Smart call routing",
@@ -86,9 +86,9 @@ export const services: ServiceItem[] = [
     ],
   },
   {
-    title: "WhatsApp Automation Service",
+    title: "WhatsApp Automation India",
     description:
-      "Engage customers on their preferred platform with automated WhatsApp solutions.",
+      "Engage Indian customers on WhatsApp with automated messaging, chatbot & notification solutions.",
     icon: MessageCircle,
     bullets: [
       "Bulk messaging",
@@ -97,9 +97,9 @@ export const services: ServiceItem[] = [
     ],
   },
   {
-    title: "n8n Automation Services",
+    title: "n8n Automation India",
     description:
-      "Streamline your workflows with powerful no-code automation using n8n.",
+      "Streamline your Indian business workflows with powerful no-code automation using n8n.",
     icon: Workflow,
     bullets: [
       "Workflow design",
@@ -108,9 +108,9 @@ export const services: ServiceItem[] = [
     ],
   },
   {
-    title: "Excel Dashboard Services",
+    title: "Excel Dashboard India",
     description:
-      "Transform your data into actionable insights with custom Excel dashboards.",
+      "Transform your business data into actionable insights with custom Excel dashboards for Indian companies.",
     icon: BarChart3,
     bullets: [
       "Data visualization",
