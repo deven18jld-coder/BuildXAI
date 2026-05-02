@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils/cn";
 import { Button } from "@/components/ui/Button";
@@ -39,20 +40,20 @@ export function Navbar({ onOpenInquiry }: NavbarProps) {
           isScrolled && "shadow-md bg-white/95"
         )}>
           {/* Logo */}
-          <a href="#home" className="group">
+          <Link href="/" className="group">
             <Logo size="md" />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-[#475569] hover:text-[#0ea5e9] transition-all duration-300"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -86,14 +87,14 @@ export function Navbar({ onOpenInquiry }: NavbarProps) {
           <div className="md:hidden mt-2 py-4 px-4 bg-white/95 backdrop-blur-xl rounded-2xl border border-black/[0.06] shadow-lg">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className="text-base font-medium text-[#475569] hover:text-[#0ea5e9] transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <Button onClick={onOpenInquiry} className="mt-2 bg-[#0ea5e9] hover:bg-[#0284c7]">
                 Connect
