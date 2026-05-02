@@ -14,4 +14,5 @@ export type InquiryFormData = {
   email: string;
   service_type: string;
   message: string;
+  bot_field?: string;
 };

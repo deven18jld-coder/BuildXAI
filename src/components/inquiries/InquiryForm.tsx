@@ -53,6 +53,20 @@ export function InquiryForm({ onSuccess }: InquiryFormProps) {
         </div>
       )}
 
+      {/* Honeypot field - visually hidden to catch bots */}
+      <div className="absolute w-0 h-0 opacity-0 overflow-hidden" aria-hidden="true" tabIndex={-1}>
+        <label htmlFor="bot_field">Leave this field blank</label>
+        <input
+          type="text"
+          id="bot_field"
+          name="bot_field"
+          value={formData.bot_field || ""}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <Input
         label="Name"
         name="name"
@@ -74,7 +88,7 @@ export function InquiryForm({ onSuccess }: InquiryFormProps) {
           required
           placeholder="10 digit mobile number"
           maxLength={10}
-          pattern="[0-9]{10}"
+          pattern="[6-9][0-9]{9}"
         />
 
         <Input

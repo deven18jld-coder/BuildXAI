@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/lib/supabase/client";
 import { InquiryFormData } from "@/types/inquiry";
 import {
+  validateName,
   validatePhone,
   validateEmail,
+  validateMessage,
   validateRequired,
 } from "@/lib/utils/validation";
 
@@ -31,6 +32,7 @@ const initialFormData: InquiryFormData = {
   email: "",
   service_type: "",
   message: "",
+  bot_field: "",
 };
 
 export function useInquiryForm(): UseInquiryFormReturn {
@@ -45,12 +47,14 @@ export function useInquiryForm(): UseInquiryFormReturn {
 
     if (!validateRequired(formData.name)) {
       newErrors.name = "Name is required";
+    } else if (!validateName(formData.name)) {
+      newErrors.name = "Name must be at least 3 characters and contain only letters";
     }
 
     if (!validateRequired(formData.phone)) {
       newErrors.phone = "Phone is required";
     } else if (!validatePhone(formData.phone)) {
-      newErrors.phone = "Please enter exactly 10 digit mobile number";
+      newErrors.phone = "Please enter a valid 10-digit Indian mobile number";
     }
 
     if (formData.email && !validateEmail(formData.email)) {
@@ -59,6 +63,14 @@ export function useInquiryForm(): UseInquiryFormReturn {
 
     if (!validateRequired(formData.service_type)) {
       newErrors.service_type = "Please select a service";
+    }
+
+    if (formData.message) {
+      if (formData.message.trim().length > 0 && formData.message.trim().length < 10) {
+        newErrors.message = "Message must be at least 10 characters";
+      } else if (!validateMessage(formData.message)) {
+        newErrors.message = "Please enter a meaningful message without repeated characters";
+      }
     }
 
     setErrors(newErrors);
@@ -82,6 +94,12 @@ export function useInquiryForm(): UseInquiryFormReturn {
     e.preventDefault();
     setSubmitError(null);
 
+    // If honeypot is filled, act like it succeeded to fool bots
+    if (formData.bot_field) {
+      setIsSuccess(true);
+      return;
+    }
+
     if (!validateForm()) {
       return;
     }
@@ -89,18 +107,22 @@ export function useInquiryForm(): UseInquiryFormReturn {
     setIsSubmitting(true);
 
     try {
-      const { error: supabaseError } = await supabase
-        .from("inquiries")
-        .insert({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email || null,
-          service_type: formData.service_type,
-          message: formData.message,
-        } as any);
+      const response = await fetch('/api/inquiries', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      if (supabaseError) {
-        throw supabaseError;
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (data.errors) {
+          setErrors(data.errors);
+          throw new Error('Please fix the errors in the form.');
+        }
+        throw new Error(data.error || 'Failed to submit inquiry');
       }
 
       setIsSuccess(true);
