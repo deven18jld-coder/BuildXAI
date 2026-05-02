@@ -50,7 +50,7 @@ export function useInquiryForm(): UseInquiryFormReturn {
     if (!validateRequired(formData.phone)) {
       newErrors.phone = "Phone is required";
     } else if (!validatePhone(formData.phone)) {
-      newErrors.phone = "Please enter a valid phone number";
+      newErrors.phone = "Please enter exactly 10 digit mobile number";
     }
 
     if (formData.email && !validateEmail(formData.email)) {

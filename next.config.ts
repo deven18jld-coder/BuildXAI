@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
 };
 
 export default nextConfig;

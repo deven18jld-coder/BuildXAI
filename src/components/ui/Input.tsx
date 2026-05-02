@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils/cn";
 import { forwardRef } from "react";
 
@@ -12,24 +14,24 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-medium text-gray-300 mb-1.5">
+          <label className="block text-sm font-medium text-[#111111] mb-1.5">
             {label}
-            {props.required && <span className="text-red-400 ml-1">*</span>}
+            {props.required && <span className="text-[#DC2626] ml-1">*</span>}
           </label>
         )}
         <input
           ref={ref}
           className={cn(
-            "w-full px-4 py-2.5 bg-gray-900/50 border border-gray-700 rounded-lg",
-            "text-gray-100 placeholder-gray-500",
-            "focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/50",
+            "w-full px-4 py-2.5 bg-white border border-black/[0.08] rounded-lg",
+            "text-[#111111] placeholder-[#9CA3AF]",
+            "focus:outline-none focus:ring-2 focus:ring-[#0D7377]/20 focus:border-[#0D7377]/50",
             "transition-all duration-200",
-            error && "border-red-500/50 focus:border-red-500/50 focus:ring-red-500/50",
+            error && "border-[#DC2626]/50 focus:border-[#DC2626]/50 focus:ring-[#DC2626]/20",
             className
           )}
           {...props}
         />
-        {error && <p className="mt-1 text-sm text-red-400">{error}</p>}
+        {error && <p className="mt-1 text-sm text-[#DC2626]">{error}</p>}
       </div>
     );
   }

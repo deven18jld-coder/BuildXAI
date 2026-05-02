@@ -18,7 +18,7 @@ export default function Home() {
   const closeInquiryModal = () => setIsInquiryModalOpen(false);
 
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-[#F8F5F0]">
       <Navbar onOpenInquiry={openInquiryModal} />
 
       <main>

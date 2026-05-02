@@ -1,25 +1,26 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { siteConfig } from "@/lib/constants/site";
 import { Container } from "@/components/ui/Container";
-import { Zap, Mail, Phone, MapPin } from "lucide-react";
+import { Logo } from "./Logo";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(2025);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
-    <footer className="bg-gray-950 border-t border-gray-800">
+    <footer className="bg-[#F8FAFC] border-t border-[rgba(15,23,42,0.08)]">
       <Container className="py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-lg font-bold text-white">
-                {siteConfig.name}
-              </span>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <Logo size="lg" />
+            <p className="text-[#475569] text-sm leading-relaxed">
               Premium web development, AI automation, and data services for
               modern businesses.
             </p>
@@ -27,12 +28,12 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-[#0F172A] font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#services"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className="text-[#475569] hover:text-[#007EA7] text-sm transition-colors"
                 >
                   Services
                 </a>
@@ -40,7 +41,7 @@ export function Footer() {
               <li>
                 <a
                   href="#projects"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className="text-[#475569] hover:text-[#007EA7] text-sm transition-colors"
                 >
                   Projects
                 </a>
@@ -48,7 +49,7 @@ export function Footer() {
               <li>
                 <a
                   href="#testimonials"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className="text-[#475569] hover:text-[#007EA7] text-sm transition-colors"
                 >
                   Testimonials
                 </a>
@@ -56,7 +57,7 @@ export function Footer() {
               <li>
                 <a
                   href="#contact"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
+                  className="text-[#475569] hover:text-[#007EA7] text-sm transition-colors"
                 >
                   Contact
                 </a>
@@ -66,28 +67,34 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Contact Us</h4>
+            <h4 className="text-[#0F172A] font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-gray-400 text-sm">
-                <Mail className="w-4 h-4 text-gray-500" />
+              <li className="flex items-center gap-3 text-[#475569] text-sm">
+                <div className="w-8 h-8 rounded-lg bg-[#007EA7]/10 flex items-center justify-center">
+                  <Mail className="w-4 h-4 text-[#007EA7]" />
+                </div>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#007EA7] transition-colors"
                 >
                   {siteConfig.email}
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-gray-400 text-sm">
-                <Phone className="w-4 h-4 text-gray-500" />
+              <li className="flex items-center gap-3 text-[#475569] text-sm">
+                <div className="w-8 h-8 rounded-lg bg-[#007EA7]/10 flex items-center justify-center">
+                  <Phone className="w-4 h-4 text-[#007EA7]" />
+                </div>
                 <a
                   href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#007EA7] transition-colors"
                 >
                   {siteConfig.phone}
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-gray-400 text-sm">
-                <MapPin className="w-4 h-4 text-gray-500 mt-0.5" />
+              <li className="flex items-start gap-3 text-[#475569] text-sm">
+                <div className="w-8 h-8 rounded-lg bg-[#007EA7]/10 flex items-center justify-center">
+                  <MapPin className="w-4 h-4 text-[#007EA7]" />
+                </div>
                 <span>{siteConfig.address}</span>
               </li>
             </ul>
@@ -95,8 +102,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <p className="text-center text-gray-500 text-sm">
+        <div className="mt-12 pt-8 border-t border-[rgba(15,23,42,0.08)]">
+          <p className="text-center text-[#475569] text-sm">
             &copy; {currentYear} {siteConfig.name}. All rights reserved.
           </p>
         </div>

@@ -3,9 +3,9 @@ export const siteConfig = {
   description:
     "Premium web development, AI automation, and data services for modern businesses.",
   url: "https://buildxai.com",
-  email: "hello@buildxai.com",
-  phone: "+91 98765 43210",
-  address: "Mumbai, India",
+  email: "buildxai.in@gmail.com",
+  phone: "+91 7706920721",
+  address: "Lucknow, India",
   social: {
     twitter: "https://twitter.com/buildxai",
     linkedin: "https://linkedin.com/company/buildxai",
@@ -14,8 +14,8 @@ export const siteConfig = {
 };
 
 export const navLinks = [
+  { name: "Home", href: "#home" },
   { name: "Services", href: "#services" },
   { name: "Projects", href: "#projects" },
-  { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ];

@@ -72,7 +72,9 @@ export function InquiryForm({ onSuccess }: InquiryFormProps) {
           onChange={handleChange}
           error={errors.phone}
           required
-          placeholder="Your phone number"
+          placeholder="10 digit mobile number"
+          maxLength={10}
+          pattern="[0-9]{10}"
         />
 
         <Input

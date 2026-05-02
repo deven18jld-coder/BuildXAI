@@ -1,5 +1,6 @@
 export function validatePhone(phone: string): boolean {
-  const phoneRegex = /^[\d\s\-\+\(\)]{10,}$/;
+  // Exactly 10 digits only
+  const phoneRegex = /^\d{10}$/;
   return phoneRegex.test(phone.replace(/\s/g, ""));
 }
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils/cn";
 import { LucideIcon } from "lucide-react";
 
@@ -19,17 +21,17 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed";
+    "inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#F8F5F0] disabled:opacity-50 disabled:cursor-not-allowed";
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-blue-600 to-violet-600 text-white hover:from-blue-500 hover:to-violet-500 focus:ring-blue-500 shadow-lg shadow-blue-500/25",
+      "bg-[#0ea5e9] text-white hover:bg-[#0284c7] focus:ring-[#0ea5e9] shadow-md shadow-[#0ea5e9]/20",
     secondary:
-      "bg-gray-800 text-gray-100 hover:bg-gray-700 focus:ring-gray-500 border border-gray-700",
+      "bg-white text-[#111111] hover:bg-[#FAFAF8] focus:ring-[#0D7377] border border-black/[0.08] shadow-sm",
     outline:
-      "border-2 border-gray-600 text-gray-300 hover:border-gray-400 hover:text-white focus:ring-gray-500 bg-transparent",
+      "border-2 border-black/[0.08] text-[#111111] hover:border-[#0D7377]/30 hover:text-[#0D7377] focus:ring-[#0D7377] bg-white shadow-sm",
     ghost:
-      "text-gray-400 hover:text-white hover:bg-gray-800/50 focus:ring-gray-500",
+      "text-[#5F6368] hover:text-[#0D7377] hover:bg-black/[0.03] focus:ring-[#0D7377]",
   };
 
   const sizes = {

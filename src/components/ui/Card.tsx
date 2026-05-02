@@ -8,8 +8,10 @@ export function Card({ children, className, ...props }: CardProps) {
   return (
     <div
       className={cn(
-        "bg-gray-800/50 border border-gray-700/50 rounded-xl overflow-hidden backdrop-blur-sm",
-        "hover:border-gray-600/50 transition-all duration-300",
+        "bg-white border border-black/[0.06] rounded-xl overflow-hidden",
+        "shadow-[0_1px_3px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.05)]",
+        "hover:border-[#0D7377]/20 hover:shadow-[0_4px_12px_rgba(0,0,0,0.08),0_8px_24px_rgba(0,0,0,0.06)]",
+        "transition-all duration-300",
         className
       )}
       {...props}
@@ -50,7 +52,7 @@ export function CardFooter({
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={cn("px-6 py-4 bg-gray-800/30 border-t border-gray-700/50", className)}
+      className={cn("px-6 py-4 bg-[#FAFAF8] border-t border-black/[0.04]", className)}
       {...props}
     >
       {children}

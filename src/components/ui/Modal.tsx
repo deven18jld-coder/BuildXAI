@@ -52,7 +52,7 @@ export function Modal({
       <div
         className={cn(
           "relative w-full max-w-md sm:max-w-lg max-h-[90vh] overflow-y-auto",
-          "bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl",
+          "bg-white border border-black/[0.08] rounded-2xl shadow-2xl",
           "transform transition-all",
           className
         )}
@@ -60,12 +60,12 @@ export function Modal({
         aria-modal="true"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-gray-800">
-          {title && <h3 className="text-lg sm:text-xl font-semibold text-white">{title}</h3>}
+        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-black/[0.06]">
+          {title && <h3 className="text-lg sm:text-xl font-semibold text-[#111111]">{title}</h3>}
           <button
             onClick={onClose}
             className={cn(
-              "p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors",
+              "p-2 text-[#5F6368] hover:text-[#111111] hover:bg-black/[0.04] rounded-lg transition-colors",
               !title && "ml-auto"
             )}
             aria-label="Close modal"
