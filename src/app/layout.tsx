@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://buildxai.in'), // 👈 Ye HTTPS fix karega
   title: {
     default: "AI Automation & Website Development Services for Indian Businesses | BuildXAI",
     template: "%s | BuildXAI",
@@ -60,11 +61,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  );
+  <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "BuildXAI",
+            "url": "https://buildxai.in",
+          }),
+        }}
+      />
+    </head>
+    <body className="min-h-full flex flex-col">{children}</body>
+  </html>
+ );
 }
+  
