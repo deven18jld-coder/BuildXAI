@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "BuildXAI",
   description:
-    "AI automation, website development & n8n workflow solutions for Indian businesses. Affordable small business automation, web design & data services across India.",
+    "AI automation, website development & n8n workflow solutions for businesses. Affordable small business automation, web design & data services.",
   url: "https://buildxai.com",
   email: "buildxai.in@gmail.com",
   phone: "+91 7706920721",

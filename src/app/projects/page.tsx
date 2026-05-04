@@ -3,14 +3,14 @@ import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AI Automation & Website Development Projects India",
+  title: "AI Automation & Website Development Projects",
   description:
-    "View BuildXAI's portfolio of AI automation, website development & n8n workflow projects delivered for Indian businesses. Real results, real growth.",
+    "View BuildXAI's portfolio of AI automation, website development & n8n workflow projects. Real results, real growth.",
   keywords: [
-    "AI automation projects India",
-    "website development portfolio India",
-    "small business automation examples India",
-    "n8n workflow projects India",
+    "AI automation projects",
+    "website development portfolio",
+    "small business automation examples",
+    "n8n workflow projects",
   ],
 };
 
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
         ← Back to Home
       </Link>
 
-      <h1 className="sr-only">AI Automation & Website Development Projects for Indian Businesses</h1>
+      <h1 className="sr-only">AI Automation & Website Development Projects</h1>
 
       <ProjectGrid />
     </main>

@@ -12,8 +12,8 @@ export function ServicesSection() {
     <section id="services" className="py-20 md:py-28 bg-white">
       <Container>
         <SectionHeading
-          title="AI Automation & Website Development Services in India"
-          subtitle="Comprehensive AI automation, website development & n8n workflow solutions designed to accelerate Indian business growth and streamline operations."
+          title="AI Automation & Website Development Services"
+          subtitle="Comprehensive AI automation, website development & n8n workflow solutions designed to accelerate business growth and streamline operations."
           centered
         />
 

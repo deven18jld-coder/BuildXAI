@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { siteConfig } from "@/lib/constants/site";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "./Logo";
+import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
@@ -19,10 +20,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Logo size="lg" />
+            <Link href="/" className="inline-block">
+              <Logo />
+            </Link>
             <p className="text-[#475569] text-sm leading-relaxed">
               AI automation, website development & n8n workflow solutions for
-              Indian businesses. Affordable small business automation across India.
+              businesses. Affordable small business automation worldwide.
             </p>
           </div>
 

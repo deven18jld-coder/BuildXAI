@@ -3,15 +3,15 @@ import { InquirySection } from "@/components/sections/InquirySection";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact for AI & Website Services India",
+  title: "Contact for AI & Website Services",
   description:
-    "Get in touch with BuildXAI for AI automation, website development & n8n workflow solutions tailored for Indian businesses. Free consultation available.",
+    "Get in touch with BuildXAI for AI automation, website development & n8n workflow solutions tailored for your business. Free consultation available.",
   keywords: [
-    "AI automation India contact",
-    "website development India inquiry",
-    "small business automation India consultation",
-    "n8n automation India quote",
-    "web design services India contact",
+    "AI automation contact",
+    "website development inquiry",
+    "small business automation consultation",
+    "n8n automation quote",
+    "web design services contact",
   ],
 };
 
@@ -22,7 +22,7 @@ export default function ContactPage() {
         ← Back to Home
       </Link>
 
-      <h1 className="sr-only">Contact BuildXAI for AI Automation & Website Development Services in India</h1>
+      <h1 className="sr-only">Contact BuildXAI for AI Automation & Website Development Services</h1>
 
       <InquirySection />
     </main>

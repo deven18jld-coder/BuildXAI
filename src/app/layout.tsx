@@ -15,43 +15,48 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://buildxai.in'), // 👈 Ye HTTPS fix karega
   title: {
-    default: "AI Automation & Website Development Services for Indian Businesses | BuildXAI",
+    default: "AI Automation & Website Development Services | BuildXAI",
     template: "%s | BuildXAI",
   },
   description:
-    "BuildXAI offers AI automation, website development & n8n workflow solutions for Indian businesses. Affordable small business automation, web design & data services across India.",
+    "BuildXAI offers AI automation, website development & n8n workflow solutions for businesses. Affordable small business automation, web design & data services.",
   keywords: [
-    "AI automation India",
-    "website development India",
-    "small business automation India",
-    "n8n automation India",
-    "web design services India",
-    "AI voice agent India",
-    "WhatsApp automation India",
-    "Excel dashboard India",
-    "website redesign India",
-    "business automation India",
-    "AI automation for gyms in India",
-    "website development for local businesses in India",
-    "automation for coaching institutes in India",
-    "gym automation India",
-    "coaching institute automation India",
-    "local business website India",
+    "AI automation",
+    "website development",
+    "small business automation",
+    "n8n automation",
+    "web design services",
+    "AI voice agent",
+    "WhatsApp automation",
+    "Excel dashboard",
+    "website redesign",
+    "business automation",
+    "AI automation for gyms",
+    "website development for local businesses",
+    "automation for coaching institutes",
+    "gym automation",
+    "coaching institute automation",
+    "local business website",
     "BuildXAI",
   ],
   authors: [{ name: "BuildXAI" }],
   openGraph: {
-    title: "AI Automation & Website Development Services for Indian Businesses | BuildXAI",
+    title: "AI Automation & Website Development Services | BuildXAI",
     description:
-      "Affordable AI automation, website development & n8n solutions for Indian businesses. Get more leads, automate workflows & scale faster.",
+      "Affordable AI automation, website development & n8n solutions for businesses. Get more leads, automate workflows & scale faster.",
     type: "website",
-    locale: "en_IN",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Automation & Website Development Services for Indian Businesses | BuildXAI",
+    title: "AI Automation & Website Development Services | BuildXAI",
     description:
-      "Affordable AI automation, website development & n8n solutions for Indian businesses. Get more leads, automate workflows & scale faster.",
+      "Affordable AI automation, website development & n8n solutions for businesses. Get more leads, automate workflows & scale faster.",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -63,6 +68,11 @@ export default function RootLayout({
   return (
   <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
     <head>
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

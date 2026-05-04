@@ -41,7 +41,7 @@ export function Navbar({ onOpenInquiry }: NavbarProps) {
         )}>
           {/* Logo */}
           <Link href="/" className="group">
-            <Logo size="md" />
+            <Logo />
           </Link>
 
           {/* Desktop Navigation */}

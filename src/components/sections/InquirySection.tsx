@@ -26,8 +26,8 @@ export function InquirySection({ onOpenInquiry }: InquirySectionProps) {
       <Container className="relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <SectionHeading
-            title="Ready to Automate & Grow Your Indian Business?"
-            subtitle="Get in touch for AI automation, website development & n8n workflow solutions tailored for Indian businesses. Free consultation available."
+            title="Ready to Automate & Grow Your Business?"
+            subtitle="Get in touch for AI automation, website development & n8n workflow solutions tailored for your business. Free consultation available."
             centered
           />
 
