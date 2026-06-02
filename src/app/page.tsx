@@ -7,6 +7,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { FounderSection } from "@/components/sections/FounderSection";
 import { IndustrySolutionsSection } from "@/components/sections/IndustrySolutionsSection";
 import { InquirySection } from "@/components/sections/InquirySection";
 import { FloatingCTA } from "@/components/sections/FloatingCTA";
@@ -28,6 +29,7 @@ export default function Home() {
         <IndustrySolutionsSection onOpenInquiry={openInquiryModal} />
         <ProjectGrid />
         <TestimonialsSection />
+        <FounderSection onOpenInquiry={openInquiryModal} />
         <InquirySection onOpenInquiry={openInquiryModal} />
       </main>
 

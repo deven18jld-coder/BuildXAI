@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/constants/site";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "./Logo";
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState(2025);
@@ -27,6 +27,17 @@ export function Footer() {
               AI automation, website development & n8n workflow solutions for
               businesses. Affordable small business automation worldwide.
             </p>
+            <div className="flex items-center gap-4 pt-2">
+              <a
+                href="https://www.instagram.com/buildxai.in?igsh=MWJqN2R6eXc2OWc4Yg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-[#007EA7] hover:text-white transition-all"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
