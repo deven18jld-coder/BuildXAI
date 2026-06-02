@@ -32,11 +32,11 @@ export function Navbar({ onOpenInquiry }: NavbarProps) {
         isScrolled ? "py-2" : "py-4"
       )}
     >
-      <nav className="max-w-7xl mx-auto px-6">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className={cn(
           "flex items-center justify-between transition-all duration-300 rounded-full",
           "bg-white/80 backdrop-blur-xl border border-black/[0.06] shadow-sm",
-          "px-6 py-3",
+          "px-5 py-2.5",
           isScrolled && "shadow-md bg-white/95"
         )}>
           {/* Logo */}
