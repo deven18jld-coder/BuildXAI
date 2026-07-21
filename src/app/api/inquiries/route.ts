@@ -108,7 +108,7 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: `"BuildXAI Form" <${SMTP_EMAIL}>`,
-      to: 'buildxai.in@gmail.com',
+      to: 'contact@buildxai.in',
       subject: `New Lead: ${name} - ${service_type || 'General Inquiry'}`,
       text: `Name: ${name}\nPhone: ${phone}\nEmail: ${email || 'N/A'}\nService: ${service_type || 'General'}\nMessage: ${message || 'N/A'}`,
       html: htmlTemplate,

@@ -3,7 +3,7 @@ export const siteConfig = {
   description:
     "AI automation, website development & n8n workflow solutions for businesses. Affordable small business automation, web design & data services.",
   url: "https://buildxai.com",
-  email: "buildxai.in@gmail.com",
+  email: "contact@buildxai.in",
   phone: "+91 7706920721",
   address: "Lucknow, India",
   social: {

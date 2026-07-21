@@ -7,7 +7,7 @@ The flow is as follows:
 1. **User submits form**: The user fills out the contact form on the frontend.
 2. **Next.js API Route receives data**: The client-side hook sends a POST request to `/api/inquiries`.
 3. **Nodemailer sends email**: The server-side API securely connects to an SMTP server.
-4. **Gmail receives notification**: An HTML-formatted email is delivered immediately to `buildxai.in@gmail.com`.
+4. **Gmail receives notification**: An HTML-formatted email is delivered immediately to `contact@buildxai.in`.
 5. **No database storage**: No data is persisted on the server, ensuring privacy and eliminating database maintenance.
 
 ## 2. Architecture Diagram
